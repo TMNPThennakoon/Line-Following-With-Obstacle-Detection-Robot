@@ -326,20 +326,9 @@ https://github.com/user-attachments/assets/ac569c33-360a-4419-949a-fb35a486c8e9
 #### Robotic Arm Detail
 
 <img width="246" height="357" alt="image" src="https://github.com/user-attachments/assets/c1d328ca-99ed-478d-8dd8-fa43d6c52d0b" />
+<img width="261" height="355" alt="image" src="https://github.com/user-attachments/assets/cbbfd704-750d-4aed-b1d8-c9cbba61160c" />
+<img width="430" height="238" alt="image" src="https://github.com/user-attachments/assets/623ce25f-decf-46a5-9339-6190709ff285" />
 
-
-
-## 🤝 Contributing
-
-We welcome contributions! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
-
-### How to Contribute
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
 
 ## 📄 License
 
