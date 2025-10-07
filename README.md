@@ -300,10 +300,10 @@ long getDistance() {
 ## 🎥 Demo Videos
 
 <!-- Add your demo video links here -->
-- [Line Following Robot Demo](LINERBO_simcode/Line%20Following%20Robo%20Group%2021.mp4)
-- [Circuit Simulation Explanation](LINERBO_simcode/Group%2021-%20LF%20Robot%20Cricuit%20Simulation%20Explain.mp4)
 
-*Note: Video files retain original naming from project development phase*
+
+https://github.com/user-attachments/assets/ac569c33-360a-4419-949a-fb35a486c8e9
+
 
 ## 📸 Project Images
 
