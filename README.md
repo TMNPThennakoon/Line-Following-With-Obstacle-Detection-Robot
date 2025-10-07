@@ -1,0 +1,389 @@
+# Line Following Robot with Obstacle Detection and Robotic Arm
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Arduino](https://img.shields.io/badge/Arduino-Compatible-blue.svg)](https://www.arduino.cc/)
+[![Proteus](https://img.shields.io/badge/Proteus-Simulated-green.svg)](https://www.labcenter.com/)
+
+A sophisticated line-following robot with obstacle detection capabilities and an integrated robotic arm for autonomous obstacle removal. Built using ATmega328P microcontroller and tested via Proteus simulation.
+
+## 🚀 Project Overview
+
+This project implements an intelligent line-following robot that combines traditional line-following algorithms with advanced obstacle detection and removal capabilities. The robot features dual operating modes, PWM-based motor control, and a servo-controlled robotic arm for autonomous obstacle handling.
+
+### Key Features
+
+- ✅ **Dual Operating Modes**: Line following only vs. Line following with obstacle handling
+- ✅ **Intelligent Obstacle Detection**: Ultrasonic sensor with 10cm detection range
+- ✅ **Autonomous Obstacle Removal**: Robotic arm with 4 servo motors
+- ✅ **Adaptive Motor Control**: PWM-based speed adjustment for curves and straight paths
+- ✅ **Visual & Audio Alerts**: LED indicators and buzzer notifications
+- ✅ **Proteus Simulation**: Complete circuit simulation before hardware implementation
+- ✅ **Mode Switching**: Push-button control with LED status indication
+
+## 📋 Table of Contents
+
+- [Hardware Components](#-hardware-components)
+- [System Architecture](#-system-architecture)
+- [Pin Configuration](#-pin-configuration)
+- [Installation & Setup](#-installation--setup)
+- [Usage](#-usage)
+- [Simulation](#-simulation)
+- [Project Structure](#-project-structure)
+- [Contributing](#-contributing)
+- [License](#-license)
+
+## 🔧 Hardware Components
+
+| Component | Quantity | Purpose |
+|-----------|----------|---------|
+| ATmega328P Microcontroller | 1 | Main controller |
+| L298N Motor Driver | 1 | Controls DC motors |
+| IR Sensors | 3 | Line detection (Left, Middle, Right) |
+| Ultrasonic Sensor (HC-SR04) | 1 | Obstacle detection |
+| DC Motors + Wheels | 4 | Movement |
+| Robot Arm (4 Servo Motors + PCA9685 Driver) | 1 | Obstacle removal |
+| Push Buttons | 2 | Mode switch & reset |
+| LEDs (Red, Green, Blue) | 3 | Alerts & mode indication |
+| Buzzer | 1 | Obstacle alert |
+| 16 MHz Crystal Oscillator | 1 | MCU clock |
+| Li-ion Battery Pack | 1 | Power source |
+| Dot board | 1 | Circuit assembly |
+
+## 🏗️ System Architecture
+
+### Functional Description
+
+**Line Following Algorithm**
+- 3 IR sensors (Left, Middle, Right) detect black lines on white surfaces
+- Robot adjusts motor direction based on sensor readings
+- PWM control provides smooth speed transitions
+
+**Obstacle Detection System**
+- Ultrasonic sensor continuously monitors path ahead
+- 10cm detection threshold triggers obstacle handling
+- Red LED and buzzer activate upon obstacle detection
+
+**Mode Switching**
+- Push button toggles between two operating modes
+- **Mode 1**: Line following only (Green LED)
+- **Mode 2**: Line following + obstacle handling (Blue LED)
+
+**Robotic Arm Integration**
+- 4 servo motors controlled via PCA9685 driver
+- Autonomous obstacle removal sequence
+- Forward movement → Pick/Push → Reset position
+
+## 🔌 Pin Configuration
+
+### Motor Driver (L298N)
+```
+enA → Pin 16 (PB2/D10) – Motor A Speed Control (PWM)
+in1 → Pin 15 (PB1/D9)  – Motor A Direction 1
+in2 → Pin 14 (PB0/D8)  – Motor A Direction 2
+in3 → Pin 13 (PD7/D7)  – Motor B Direction 1
+in4 → Pin 12 (PD6/D6)  – Motor B Direction 2
+enB → Pin 11 (PD5/D5)  – Motor B Speed Control (PWM)
+```
+
+### IR Sensors
+```
+Right Sensor  → Pin 23 (PC0/A0)
+Middle Sensor → Pin 24 (PC1/A1)
+Left Sensor   → Pin 25 (PC2/A2)
+```
+
+### Ultrasonic Sensor (HC-SR04)
+```
+Trigger → Pin 5 (PD3/D3)
+Echo    → Pin 4 (PD2/D2)
+```
+
+### User Interface
+```
+Mode Button → Pin 26 (PC3/A3) – with internal pull-up
+Red LED     → Pin 6 (PD4/D4)  – Obstacle alert
+Green LED   → Pin 18 (PB4/D12) – Mode 1 indicator
+Blue LED    → Pin 17 (PB3/D11) – Mode 2 indicator
+Buzzer      → Pin 27 (PC4/A4)  – Audio alerts
+```
+
+## 🛠️ Installation & Setup
+
+### Prerequisites
+
+- Arduino IDE (latest version)
+- Proteus Design Suite (for simulation)
+- ATmega328P microcontroller
+- Required hardware components (listed above)
+
+### Software Setup
+
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/TMNPThennakoon/Line-Following-With-Obstacle-Detection-Robot.git
+   cd Line-Following-With-Obstacle-Detection-Robot
+   ```
+
+2. **Open Arduino IDE**
+   - Navigate to `LINERBO_simcode/LINERBO_simcode.ino`
+   - Select Arduino Uno board
+   - Upload the code to your ATmega328P
+
+3. **Proteus Simulation**
+   - Open `LINE_ROBOT.pdsprj` in Proteus
+   - Load the generated HEX file
+   - Run simulation to test functionality
+
+### Hardware Assembly
+
+1. **Circuit Assembly**
+   - Follow the pin configuration diagram
+   - Assemble components on dot board
+   - Ensure proper power supply connections
+
+2. **Calibration**
+   - Adjust IR sensor sensitivity
+   - Calibrate ultrasonic sensor range
+   - Test motor directions and speeds
+
+## 🎮 Usage
+
+### Operating Modes
+
+**Mode 1: Line Following Only**
+- Press mode button to activate (Green LED)
+- Robot follows black line on white surface
+- No obstacle detection active
+
+**Mode 2: Line Following + Obstacle Handling**
+- Press mode button to activate (Blue LED)
+- Combines line following with obstacle detection
+- Automatic obstacle removal when detected
+
+### Control Features
+
+- **Mode Switching**: Press button to toggle between modes
+- **Obstacle Alert**: Red LED + buzzer when obstacle detected
+- **Audio Feedback**: Different beep patterns for various events
+- **Visual Status**: LED indicators show current mode
+
+## 🖥️ Simulation
+
+### Proteus Simulation Setup
+
+1. **Circuit Design**
+   - Complete circuit schematic available in `LINE_ROBOT.pdsprj`
+   - All components properly connected and configured
+
+2. **Simulation Features**
+   - Real-time sensor readings
+   - Motor control visualization
+   - Obstacle detection simulation
+   - Mode switching demonstration
+
+### Simulation Images
+
+<!-- Add your simulation screenshots here -->
+
+#### Circuit Diagram
+![Circuit Diagram](images/simulation-circuit-diagram.png)
+*Complete circuit schematic showing all component connections*
+
+#### Proteus Simulation Interface
+![Proteus Interface](images/proteus-simulation-interface.png)
+*Proteus simulation environment with running circuit*
+
+#### Component Layout
+![Component Layout](images/component-layout.png)
+*Physical component arrangement and connections*
+
+#### Test Results
+![Test Results](images/simulation-test-results.png)
+*Simulation test results and performance metrics*
+
+## 📁 Project Structure
+
+```
+Line-Following-With-Obstacle-Detection-Robot/
+├── LINERBO_simcode/
+│   ├── LINERBO_simcode.ino          # Main Arduino code
+│   ├── build/                        # Compiled HEX files
+│   ├── LINE_ROBOT.pdsprj            # Proteus project file
+│   ├── LINE_ROBOT_Simulation.jpg    # Simulation screenshot
+│   ├── With robot Arm LF robot Circuit.png
+│   ├── Sensor .hex file/            # Sensor libraries for Proteus
+│   │   ├── InfraredSensors/
+│   │   ├── L298MotorDriver/
+│   │   └── ultrasonic/
+│   └── Project Backups/             # Backup files
+├── images/                          # Project images and screenshots
+│   ├── simulation/                  # Simulation screenshots
+│   ├── hardware/                    # Hardware assembly photos
+│   ├── final-output/                # Final project demonstrations
+│   └── circuit-diagrams/            # Circuit diagrams and schematics
+├── README.md                        # This file
+└── LICENSE                          # MIT License
+```
+
+### 📸 Image Organization
+
+The project includes a comprehensive image collection organized in the `images/` directory:
+
+- **`images/simulation/`** - Proteus simulation screenshots and test results
+- **`images/hardware/`** - Hardware assembly, circuit boards, and component photos
+- **`images/final-output/`** - Robot demonstrations and final project videos
+- **`images/circuit-diagrams/`** - Circuit schematics and connection diagrams
+
+## 🎯 Key Features Implementation
+
+### Line Following Algorithm
+```cpp
+int readSensors() {
+    int RS = digitalRead(RS_PIN);  
+    int MS = digitalRead(MS_PIN);  
+    int LS = digitalRead(LS_PIN);
+    
+    // LOW = black line, HIGH = white
+    if (RS == HIGH && MS == HIGH && LS == HIGH) return 0; // Line lost
+    if (MS == LOW && LS == HIGH && RS == HIGH) return 1;  // Center
+    if (LS == LOW && MS == HIGH) return 2;                // Left
+    if (RS == LOW && MS == HIGH) return 3;                // Right
+    return 4; // Undefined
+}
+```
+
+### Obstacle Detection
+```cpp
+long getDistance() {
+    digitalWrite(trigPin, LOW);
+    delayMicroseconds(2);
+    digitalWrite(trigPin, HIGH);
+    delayMicroseconds(10);
+    digitalWrite(trigPin, LOW);
+    
+    long duration = pulseIn(echoPin, HIGH, 20000);
+    long distance = duration * 0.034 / 2;
+    return distance;
+}
+```
+
+### PWM Motor Control
+- Adaptive speed control for different path conditions
+- Slower speeds on sharp turns
+- Faster speeds on straight paths
+- Smooth transitions between movements
+
+## 📊 Performance Specifications
+
+- **Line Detection**: 3 IR sensors with digital output
+- **Obstacle Range**: 2cm - 400cm (ultrasonic sensor)
+- **Detection Threshold**: 10cm for obstacle handling
+- **Motor Control**: PWM-based speed control
+- **Operating Voltage**: 5V (microcontroller), 12V (motors)
+- **Response Time**: < 50ms for sensor readings
+
+## 🎥 Demo Videos
+
+<!-- Add your demo video links here -->
+- [Line Following Robot Demo](LINERBO_simcode/Line%20Following%20Robo%20Group%2021.mp4)
+- [Circuit Simulation Explanation](LINERBO_simcode/Group%2021-%20LF%20Robot%20Cricuit%20Simulation%20Explain.mp4)
+
+*Note: Video files retain original naming from project development phase*
+
+## 📸 Project Images
+
+### Hardware Assembly
+
+#### Custom Arduino Board with ATmega328P
+![Custom Arduino Board](images/custom-arduino-board.png)
+*Custom Arduino board using ATmega328P microcontroller*
+
+#### Complete Robot Assembly
+![Complete Robot](images/complete-robot-assembly.png)
+*Fully assembled line-following robot with all components*
+
+#### Robotic Arm Detail
+![Robotic Arm](images/robotic-arm-detail.png)
+*Close-up view of the robotic arm mechanism*
+
+#### Circuit Board Layout
+![Circuit Board](images/circuit-board-layout.png)
+*Circuit board with all connections and components*
+
+### Simulation Screenshots
+
+#### Proteus Circuit Simulation
+![Proteus Circuit](images/proteus-circuit-simulation.png)
+*Running Proteus simulation with active circuit*
+
+#### Component Testing
+![Component Testing](images/component-testing.png)
+*Individual component testing in simulation*
+
+#### Line Following Test
+![Line Following Test](images/line-following-test.png)
+*Robot following line path in simulation*
+
+#### Obstacle Detection Test
+![Obstacle Detection](images/obstacle-detection-test.png)
+*Obstacle detection and handling simulation*
+
+### Final Output
+
+#### Robot in Action - Line Following
+![Line Following Demo](images/robot-line-following.gif)
+*Robot successfully following black line on white surface*
+
+#### Robot in Action - Obstacle Removal
+![Obstacle Removal](images/robot-obstacle-removal.gif)
+*Robot detecting and removing obstacles using robotic arm*
+
+#### Mode Switching Demonstration
+![Mode Switching](images/mode-switching-demo.gif)
+*Demonstration of switching between operating modes*
+
+#### LED Status Indicators
+![LED Indicators](images/led-status-indicators.png)
+*LED status indicators showing different modes and alerts*
+
+## 🤝 Contributing
+
+We welcome contributions! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
+
+### How to Contribute
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 👤 Author
+
+**Nayana Pabasara** 
+- Hardware Design & Assembly
+- Software Development & Programming
+- Circuit Simulation & Testing
+- Documentation & Project Management
+
+## 📞 Contact
+
+- **GitHub**: [@TMNPThennakoon](https://github.com/TMNPThennakoon)
+- **Project Repository**: [Line-Following-With-Obstacle-Detection-Robot](https://github.com/TMNPThennakoon/Line-Following-With-Obstacle-Detection-Robot)
+
+## 🙏 Acknowledgments
+
+- Arduino community for excellent documentation and support
+- Proteus Design Suite for comprehensive simulation capabilities
+- Open source hardware community for inspiration and resources
+- Educational resources and tutorials that guided the development process
+
+---
+
+**⭐ If you found this project helpful, please consider giving it a star!**
+
+*Built with ❤️ using Arduino IDE and Proteus Design Suite*
