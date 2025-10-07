@@ -5,7 +5,8 @@
 [![Proteus](https://img.shields.io/badge/Proteus-Simulated-green.svg)](https://www.labcenter.com/)
 
 A sophisticated line-following robot with obstacle detection capabilities and an integrated robotic arm for autonomous obstacle removal. Built using ATmega328P microcontroller and tested via Proteus simulation.
-<img width="572" height="682" alt="image" src="https://github.com/user-attachments/assets/5e95d1c4-03c1-4a57-87d9-fe4c62e61560" />
+<img width="572" height="682" alt="image" src="https://github.com/user-attachments/assets/5e95d1c4-03c1-4a57-87d9-fe4c62e61560" /> <img width="464" height="640" alt="image" src="https://github.com/user-attachments/assets/aa63a148-0546-4e50-a806-159b21dfc08f" />
+
 
 ## 🚀 Project Overview
 
@@ -324,45 +325,6 @@ https://github.com/user-attachments/assets/ac569c33-360a-4419-949a-fb35a486c8e9
 <img width="246" height="357" alt="image" src="https://github.com/user-attachments/assets/c1d328ca-99ed-478d-8dd8-fa43d6c52d0b" />
 
 
-#### Circuit Board Layout
-![Circuit Board](images/circuit-board-layout.png)
-*Circuit board with all connections and components*
-
-### Simulation Screenshots
-
-#### Proteus Circuit Simulation
-![Proteus Circuit](images/proteus-circuit-simulation.png)
-*Running Proteus simulation with active circuit*
-
-#### Component Testing
-![Component Testing](images/component-testing.png)
-*Individual component testing in simulation*
-
-#### Line Following Test
-![Line Following Test](images/line-following-test.png)
-*Robot following line path in simulation*
-
-#### Obstacle Detection Test
-![Obstacle Detection](images/obstacle-detection-test.png)
-*Obstacle detection and handling simulation*
-
-### Final Output
-
-#### Robot in Action - Line Following
-![Line Following Demo](images/robot-line-following.gif)
-*Robot successfully following black line on white surface*
-
-#### Robot in Action - Obstacle Removal
-![Obstacle Removal](images/robot-obstacle-removal.gif)
-*Robot detecting and removing obstacles using robotic arm*
-
-#### Mode Switching Demonstration
-![Mode Switching](images/mode-switching-demo.gif)
-*Demonstration of switching between operating modes*
-
-#### LED Status Indicators
-![LED Indicators](images/led-status-indicators.png)
-*LED status indicators showing different modes and alerts*
 
 ## 🤝 Contributing
 
