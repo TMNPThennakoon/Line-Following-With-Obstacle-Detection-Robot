@@ -5,6 +5,7 @@
 [![Proteus](https://img.shields.io/badge/Proteus-Simulated-green.svg)](https://www.labcenter.com/)
 
 A sophisticated line-following robot with obstacle detection capabilities and an integrated robotic arm for autonomous obstacle removal. Built using ATmega328P microcontroller and tested via Proteus simulation.
+<img width="572" height="682" alt="image" src="https://github.com/user-attachments/assets/5e95d1c4-03c1-4a57-87d9-fe4c62e61560" />
 
 ## 🚀 Project Overview
 
@@ -67,6 +68,9 @@ This project implements an intelligent line-following robot that combines tradit
 - Push button toggles between two operating modes
 - **Mode 1**: Line following only (Green LED)
 - **Mode 2**: Line following + obstacle handling (Blue LED)
+
+**Mode Switching Circuit**
+<img width="389" height="383" alt="image" src="https://github.com/user-attachments/assets/b0444377-e6a8-427a-942f-d757a4283a89" />
 
 **Robotic Arm Integration**
 - 4 servo motors controlled via PCA9685 driver
@@ -155,10 +159,16 @@ Buzzer      → Pin 27 (PC4/A4)  – Audio alerts
 - Robot follows black line on white surface
 - No obstacle detection active
 
+  <img width="223" height="358" alt="image" src="https://github.com/user-attachments/assets/73f3841b-3130-414a-96d5-675b0a1cd4f3" />
+
+
 **Mode 2: Line Following + Obstacle Handling**
 - Press mode button to activate (Blue LED)
 - Combines line following with obstacle detection
 - Automatic obstacle removal when detected
+
+<img width="232" height="359" alt="image" src="https://github.com/user-attachments/assets/bb91562b-f6dd-4d8f-a2c3-cf196b8d16a4" />
+
 
 ### Control Features
 
@@ -186,20 +196,25 @@ Buzzer      → Pin 27 (PC4/A4)  – Audio alerts
 <!-- Add your simulation screenshots here -->
 
 #### Circuit Diagram
-![Circuit Diagram](images/simulation-circuit-diagram.png)
-*Complete circuit schematic showing all component connections*
+<img width="605" height="437" alt="image" src="https://github.com/user-attachments/assets/9ee8ee38-a28c-45b6-8507-05bd30c9eff2" />
+
 
 #### Proteus Simulation Interface
-![Proteus Interface](images/proteus-simulation-interface.png)
-*Proteus simulation environment with running circuit*
+<img width="902" height="821" alt="image" src="https://github.com/user-attachments/assets/db282dff-acda-4e75-a54d-145d8d8c455f" />
+
 
 #### Component Layout
 ![Component Layout](images/component-layout.png)
 *Physical component arrangement and connections*
 
 #### Test Results
-![Test Results](images/simulation-test-results.png)
-*Simulation test results and performance metrics*
+
+<img width="337" height="301" alt="image" src="https://github.com/user-attachments/assets/f8b6abd5-67a0-42bc-b8bd-84d85fcbdc0c" />
+
+<img width="325" height="305" alt="image" src="https://github.com/user-attachments/assets/f7a7ad09-c27d-42c7-8a2c-98e1a265d096" />
+
+<img width="250" height="308" alt="image" src="https://github.com/user-attachments/assets/e02a6c68-f911-4479-9884-213e59c91b39" />
+
 
 ## 📁 Project Structure
 
@@ -295,16 +310,19 @@ long getDistance() {
 ### Hardware Assembly
 
 #### Custom Arduino Board with ATmega328P
-![Custom Arduino Board](images/custom-arduino-board.png)
-*Custom Arduino board using ATmega328P microcontroller*
+
+<img width="571" height="526" alt="image" src="https://github.com/user-attachments/assets/b79e6acc-d290-45c1-b653-87b73daad9f0" />
+
 
 #### Complete Robot Assembly
-![Complete Robot](images/complete-robot-assembly.png)
-*Fully assembled line-following robot with all components*
+
+<img width="417" height="313" alt="image" src="https://github.com/user-attachments/assets/a8e784a8-8701-41d3-aa41-bde5c6810fa5" />
+
 
 #### Robotic Arm Detail
-![Robotic Arm](images/robotic-arm-detail.png)
-*Close-up view of the robotic arm mechanism*
+
+<img width="246" height="357" alt="image" src="https://github.com/user-attachments/assets/c1d328ca-99ed-478d-8dd8-fa43d6c52d0b" />
+
 
 #### Circuit Board Layout
 ![Circuit Board](images/circuit-board-layout.png)
