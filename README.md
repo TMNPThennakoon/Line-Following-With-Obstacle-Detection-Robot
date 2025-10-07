@@ -5,7 +5,7 @@
 [![Proteus](https://img.shields.io/badge/Proteus-Simulated-green.svg)](https://www.labcenter.com/)
 
 A sophisticated line-following robot with obstacle detection capabilities and an integrated robotic arm for autonomous obstacle removal. Built using ATmega328P microcontroller and tested via Proteus simulation.
-<img width="572" height="682" alt="image" src="https://github.com/user-attachments/assets/5e95d1c4-03c1-4a57-87d9-fe4c62e61560" /> <img width="464" height="640" alt="image" src="https://github.com/user-attachments/assets/aa63a148-0546-4e50-a806-159b21dfc08f" />
+<img width="572" height="682" alt="image" src="https://github.com/user-attachments/assets/5e95d1c4-03c1-4a57-87d9-fe4c62e61560" /> 
 
 
 ## 🚀 Project Overview
@@ -21,6 +21,9 @@ This project implements an intelligent line-following robot that combines tradit
 - ✅ **Visual & Audio Alerts**: LED indicators and buzzer notifications
 - ✅ **Proteus Simulation**: Complete circuit simulation before hardware implementation
 - ✅ **Mode Switching**: Push-button control with LED status indication
+  
+<img width="464" height="640" alt="image" src="https://github.com/user-attachments/assets/aa63a148-0546-4e50-a806-159b21dfc08f" />
+
 
 ## 📋 Table of Contents
 
